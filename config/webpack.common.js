@@ -293,7 +293,15 @@ module.exports = (selfConfig) => {
           use: [
             isDev() ? "style-loader" : MiniCssExtractPlugin.loader,
             "css-loader",
-            "postcss-loader",
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                config: {
+                  path: require.resolve('../postcss.config.js')
+                }
+              }
+            }
           ],
         },
         {
@@ -302,7 +310,15 @@ module.exports = (selfConfig) => {
             isDev() ? "style-loader" : MiniCssExtractPlugin.loader,
             "css-loader",
             "less-loader",
-            "postcss-loader",
+            {
+              loader: 'postcss-loader',
+              options: {
+                ident: 'postcss',
+                config: {
+                  path: require.resolve('../postcss.config.js')
+                }
+              }
+            }
           ],
         },
         {
