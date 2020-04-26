@@ -3,6 +3,12 @@
   "version": "1.0.1",
   "description": "customized module bundler",
   "license": "BSD",
+  "keywords": [
+    "customized-webpack",
+    "webpack",
+    "react",
+    "typeScript"
+  ],
   "bin": {
     "customizedWebpack": "./bin/scripts.js"
   },

@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const fs = require("fs-extra");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // 基于模版自动在output.path目录中生成html
 const { appIndexHtml, appFavicon } = require("../paths");
@@ -13,7 +14,7 @@ module.exports = (selfConfig) => {
       new HtmlWebpackPlugin({
         inject: true, // 将所有资源注入给定template形成的html，传递时，true或'body'所有javascript资源都将放置在body元素的底部。'head'会将脚本放置在head元素中。
         template: appIndexHtml,
-        favicon: appFavicon,
+        favicon: fs.pathExistsSync(appFavicon) ? appFavicon : "",
       }),
     ],
   });
