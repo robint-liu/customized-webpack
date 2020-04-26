@@ -3,9 +3,9 @@
 customized-webpack是专为SPA服务的构建工具，可支持react、typeScript，个性化拓展webpack。
 
 ## template-directory
-`
-    your project
+ your project
 
+```
     assets
         images
     src
@@ -14,4 +14,3 @@ customized-webpack是专为SPA服务的构建工具，可支持react、typeScrip
     package.json
     tsconfig.json (if you need)
     webpack.js
-`
