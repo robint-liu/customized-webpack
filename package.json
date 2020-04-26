@@ -16,9 +16,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hot-loader": "4.12.20",
-    "typescript": "3.8.3"
-  },
-  "devDependencies": {
+    "typescript": "3.8.3",
     "@babel/core": "7.9.0",
     "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/plugin-proposal-decorators": "7.8.3",
