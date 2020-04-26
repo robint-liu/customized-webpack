@@ -1,0 +1,7 @@
+@import "./fonts/D-DIN/D-DIN.css";
+
+.hello {
+    color: red;
+    font-family: D-DIN;
+    background: url('./icon.jpeg');
+}
