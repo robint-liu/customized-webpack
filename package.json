@@ -12,6 +12,10 @@
   "bin": {
     "customizedWebpack": "./bin/scripts.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robint-liu/customized-webpack"
+  },
   "scripts": {
     "clean": "rm -rf dist",
     "start": "node ./bin/scripts start",
