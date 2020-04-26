@@ -1,5 +1,6 @@
 const resolveApp = require("../utils/resolveApp.js");
-module.exports= {
+
+module.exports = {
   appTsConfig: resolveApp("tsconfig.json"),
   appConfig: resolveApp("webpack"),
   appIndexJs: resolveApp("src/index"),

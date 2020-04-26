@@ -4,7 +4,6 @@
  * 2、当项目配置存在时，读取项目自定义配置
  * */
 
-// const { defaultsDeep } = require("lodash");
 const { appConfig } = require("../paths");
 const selfConfig = require(appConfig);
 const fs = require("fs-extra");

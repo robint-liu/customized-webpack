@@ -1,21 +1,21 @@
 const merge = require('webpack-merge');
-const fs = require("fs-extra");
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 基于模版自动在output.path目录中生成html
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 用于优化\最小化CSS资产
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 微型提取css插件
 const safePostCssParser = require('postcss-safe-parser'); // 容错CSS解析器，它将发现并修复语法错误，能够解析任何输入.
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin'); // minify JavaScript
 const { appIndexHtml, appFavicon } = require("../paths");
+const fs = require("fs-extra");
 
-module.exports = (selfConfig) => {
-  return merge(require('./webpack.common')(selfConfig), {
+module.exports = (customizedConfig) => {
+  return merge(require('./webpack.common')(customizedConfig), {
     mode: 'production', // 生产模式
     devtool: false,
     bail: true, // 开启bail。通常在第一个错误出现时抛出失败结果，而不是容忍它。默认情况下，当使用HMR时，webpack会将在终端以及浏览器控制台中以红色文字记录这些错误，但仍然继续进行打包
     plugins: [
       new HtmlWebpackPlugin({
-        favicon: fs.pathExistsSync(appFavicon) ? appFavicon : "",
         template: appIndexHtml,
+        favicon: fs.pathExistsSync(appFavicon) ? appFavicon : "",
         minify: {
           removeComments: true,
           collapseWhitespace: true,
