@@ -2,7 +2,7 @@
   "name": "customized-webpack",
   "version": "1.0.0",
   "description": "customized module bundler",
-  "license": "BSD",
+  "license": "BSD 3-Clause",
   "bin": {
     "customizedWebpack": "./bin/scripts.js"
   },
