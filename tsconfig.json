@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "baseUrl": "./"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
