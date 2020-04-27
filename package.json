@@ -1,6 +1,6 @@
 {
   "name": "customized-webpack",
-  "version": "1.0.7",
+  "version": "0.0.1",
   "description": "customized module bundler",
   "license": "BSD",
   "keywords": [
