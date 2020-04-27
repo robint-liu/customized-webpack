@@ -1,6 +1,7 @@
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 基于模版自动在output.path目录中生成html
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin'); // 用于优化\最小化CSS资产
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // 可视化webpack打包文件体积
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // 微型提取css插件
 const safePostCssParser = require('postcss-safe-parser'); // 容错CSS解析器，它将发现并修复语法错误，能够解析任何输入.
 const TerserPlugin = require('terser-webpack-plugin'); // minify JavaScript
@@ -33,7 +34,8 @@ module.exports = (customizedConfig) => {
         filename: 'css/style.[contentHash:8].css',
         chunkFilename: 'css/style.[contentHash:8].chunk.css',
       }),
-    ],
+      customizedConfig.useBundleAnalyzer && new BundleAnalyzerPlugin()
+    ].filter(Boolean),
     optimization: {
       minimize: true,
       minimizer: [

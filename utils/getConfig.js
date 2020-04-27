@@ -5,13 +5,14 @@
  * */
 
 const { appConfig } = require("../paths");
+const {defaultsDeep} = require("lodash");
 const selfConfig = require(appConfig);
 const fs = require("fs-extra");
 const localConfig = require("../webpack");
 
 module.exports = () => {
   if (fs.pathExistsSync(appConfig)) {
-    return require("lodash").defaultsDeep({}, localConfig, selfConfig);
+    return defaultsDeep(selfConfig, localConfig); // 来源对象从左到右应用
   }
   return localConfig;
 };
