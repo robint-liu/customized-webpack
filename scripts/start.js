@@ -2,12 +2,13 @@
 
 process.env.NODE_ENV = "development";
 
+const Webpack = require("webpack");
 const {appBuild} = require("../paths");
 const customizedConfig = require("../utils/getConfig")();
 const WebpackDevServer = require("webpack-dev-server");
 const devWebpack = require("../config/webpack.dev")(customizedConfig);
-const Webpack = require("webpack");
-const compiler = Webpack(devWebpack);
+const mixinConfig = require("../utils/mixinConfig");
+const compiler = Webpack(mixinConfig(devWebpack, customizedConfig));
 
 const devOptions = {
   contentBase: appBuild, // 告诉服务器从何处提供内容，未起作用
