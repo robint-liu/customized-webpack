@@ -59,7 +59,7 @@ module.exports = {
       ignore: false,
       root: true,
       parser: "babel-eslint",
-      plugins: ["import", "react", "lodash"],
+      plugins: ["import", "react-hooks", "react", "lodash"],
       env: {
         browser: true,
         commonjs: true,
@@ -235,9 +235,10 @@ module.exports = {
         "react/style-prop-object": "warn",
         // disallow ref="string"
         "react/no-string-refs": "warn",
-        
         // force import isEqual from 'lodash/isEqual'
         "lodash/import-scope": ["error", "method"],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
       },
     },
   },
